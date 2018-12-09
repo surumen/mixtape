@@ -9,6 +9,8 @@ var YouTube = require('youtube-node');
 var youtube = new YouTube();
 youtube.setKey('AIzaSyAohCAZmsSvY4m-eKtab-3vaUfEJQjgBkA');
 
+const PORT = process.env.PORT || 3000;
+
 app.get('/',function(req,res){
      res.sendFile('/index.html');
 });
@@ -44,6 +46,6 @@ app.get('/youtube', function(req, res) {
     });
 });
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log('Example app listening on port 3000!');
 });
