@@ -1,5 +1,4 @@
-angular.module('musicNetworks', [])
-  .controller('TrackListController', ['$scope','$http', function($scope,$http) {
+angular.module('musicNetworks', []).controller('TrackListController', ['$scope','$http', function($scope,$http) {
     var trackList = this;
     trackList.tracks = [];
 
