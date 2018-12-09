@@ -3,7 +3,7 @@ angular.module('musicNetworks', [])
     var trackList = this;
     trackList.tracks = [];
 
-    var server = "http://localhost:3000";
+    var server = "https://surumen-mixtape.herokuapp.com/";
 
     var getYoutubeId = function(artist, song, callback) {
         $http.get(server + "/youtube?artist="
