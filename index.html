@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="musicNetworks">
+
+<head>
+    <title>Mixtape Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="track.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container" ng-controller="TrackListController as trackList">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="https://images.apple.com/v/music-memos/a/images/overview/record_bg_circles_large.png" alt="" width="72" height="72">
+            <h2>Networks Mixtape Generator</h2>
+            <p class="lead">This fire system uses network analysis concepts to generate playlists for you based on the similarity of songs in the Million Song Dataset and the Last.fm user preferences subset. The songs are ranked based on decreasing similarity with the song you enter.</p>
+            <br><br>
+            <form ng-submit="trackList.getTracks()">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" ng-model="trackList.artist" placeholder="Artist" required="">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" ng-model="trackList.track" placeholder="Song" required="">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-secondary form-control" value="find">Generate</button>
+                    </div>
+                </div>
+                <hr class="mb-4">
+            </form>
+            <h4 class="text-center align-items-center mb-3">
+              <span class="text-muted">Similar Songs</span>
+            </h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed" ng-repeat="track in trackList.tracks">
+                    <div class="col-md-4">
+                        <p class="my-0">{{track.song}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <small class="text-muted">{{track.artist}}</small>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted"><a target="_blank" href='https://www.youtube.com/watch?v={{track.youtubeId}}'>Play Song</a></span>
+                    </div>
+                    </span>
+                </li>
+            </ul>
+            <form class="needs-validation" novalidate="">
+                <hr class="mb-4">
+                <a href={{trackList.generatePlaylist()}}>
+                <button class="btn btn-secondary" type="submit">Create Playlist on YouTube</button></a>
+            </form>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <hr class="mb-6">
+            <p class="mb-1">CS 194-31 Fall 2018 Final Project</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://github.com/surumen/music-networks">Github</a></li>
+                <li class="list-inline-item"><a href="https://surumen.com">Homepage</a></li>
+            </ul>
+        </footer>
+        </div>
+    </div>
+</body>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlgm/PlaylistGenerator.git"
+  },
+  "author": "jlgm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlgm/PlaylistGenerator/issues"
+  },
+  "homepage": "https://github.com/jlgm/PlaylistGenerator#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "http": "0.0.0",
+    "request": "^2.79.0",
+    "youtube-node": "^1.3.0"
+  }
+}
