@@ -2,7 +2,7 @@ angular.module('musicNetworks', []).controller('TrackListController', ['$scope',
     var trackList = this;
     trackList.tracks = [];
 
-    var server = "https://surumen-mixtape.herokuapp.com/";
+    var server = "https://surumen-mixtape.herokuapp.com";
 
     var getYoutubeId = function(artist, song, callback) {
         $http.get(server + "/youtube?artist="
