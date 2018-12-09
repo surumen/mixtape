@@ -41,15 +41,14 @@
                         <small class="text-muted">{{track.artist}}</small>
                     </div>
                     <div class="col-md-4">
-                        <span class="text-muted"><a target="_blank" href='https://www.youtube.com/watch?v={{track.youtubeId}}'>Play Song</a></span>
+                        <span class="text-muted"><a target="_blank" href='https://music.youtube.com/watch?v={{track.youtubeId}}'>Play Song</a></span>
                     </div>
                     </span>
                 </li>
             </ul>
             <form class="needs-validation" novalidate="">
                 <hr class="mb-4">
-                <a href={{trackList.generatePlaylist()}}>
-                <button class="btn btn-secondary" type="submit">Create Playlist on YouTube</button></a>
+                <a href={{trackList.generatePlaylist()}} class="btn btn-secondary">Create Playlist on YouTube</a>
             </form>
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <hr class="mb-6">
